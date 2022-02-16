@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  font-family: 'Gideon Roman', cursive;
+  font-size: 16px;
+  height: 100vh;
+}
+
+
+
+/* NavBar links */
+
+a {
+      text-decoration: none; 
+      color: #979494;
+}
+
+a:hover {
+  font-size: 2.5rem;
+  color: #02FFFF;
+  font-weight: 900;
+  margin: 0.3rem;
+}
+
+/* a:active{
+  text-decoration: underline;
+}
+
+a:visited{
+  text-decoration: underline;
+} */
+
+/* Footer  */

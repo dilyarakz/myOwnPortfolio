@@ -27,7 +27,8 @@ const navListItem = {
     marginRight: "0.9em",
     marginTop: "1em",
     padding: "0.2rem",
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: "bold",
     // border: "1px white solid"
 
 }

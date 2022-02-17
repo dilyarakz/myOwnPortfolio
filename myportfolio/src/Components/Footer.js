@@ -9,7 +9,7 @@ const footerMain = {
     backgroundColor: "black",
     padding: "3em",
     color: "#02FFFF",
-    position: "absolute",
+    // position: "absolute",
     width: "100%",
     bottom: "0",
     display: "flex",

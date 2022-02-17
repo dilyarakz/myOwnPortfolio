@@ -10,24 +10,24 @@
 
 /* NavBar links */
 
-a {
+#link {
       text-decoration: none; 
       color: #979494;
 }
 
-a:hover {
+#link:hover {
   font-size: 2.5rem;
   color: #02FFFF;
   font-weight: 900;
   margin: 0.3rem;
 }
 
-/* a:active{
+#link:active{
   text-decoration: underline;
 }
 
-a:visited{
+#link:visited{
   text-decoration: underline;
-} */
+} 
 
 /* Footer  */

@@ -15,7 +15,8 @@ const mainStyle = {
     backgroundRepeat: "no-repeat, repeat",
     backgroundPosition: "right",
     width: "100%",
-    backgroundSize: "scale-down",
+    // backgroundSize: "scale-down",
+    backgroundSize: "cover",
     // overflow: "hidden",
     // opacity: 0.8
     // backgroundImage: "repeating-linear - gradient(red, yellow 50 %, green 20 %)"
@@ -23,13 +24,15 @@ const mainStyle = {
 
 const welcomeText = {
     backgroundColor: "rgb(0, 0, 0, 0.5)",
-    width: "70%",
+    width: "60%",
     position: "absolute",
     top: "35%",
-    right: "5%",
-    color: "#02FFFF",
+    right: "15%",
+    // color: "#02FFFF",
     // color: "white",
     // color: "#FF00FF",
+    color: "#FFFF00",
+    // color: "black",
     fontWeight: "bold",
     padding: "2em",
     textAlign: "center"

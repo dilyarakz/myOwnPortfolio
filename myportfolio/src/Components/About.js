@@ -1,26 +1,14 @@
 import React from 'react';
-import BackgroundImg from "../images/about3.jpeg";
+import BackgroundImg from "../images/homebackground3.jpeg";
 
 
-// #region constants
 
-// #endregion
-
-// #region styled-components
-
-// #endregion
-
-// #region functions
-
-// #endregion
-
-// #region component
 const propTypes = {};
 
 const defaultProps = {};
 
 const mainStyle = {
-    // backgroundColor: "black",
+    // backgroundColor: "#2596be",
     color: "white",
     // height: "100vh",
     backgroundImage: `url(${BackgroundImg})`,
@@ -38,10 +26,12 @@ const mainStyle = {
 }
 
 const styleAboutContainer = {
-    backgroundColor: "rgb(0, 0, 0, 0.5)",
+    backgroundColor: "rgb(0, 0, 0, 0.6)",
     width: "70%",
     maxWidth: "1000px",
-    height: "60%",
+    minWidth: "800px",
+    maxHeight: "600px",
+    height: "auto",
     // color: "black",
     // color: "#02FFFF",
     // color: "white",
@@ -50,7 +40,9 @@ const styleAboutContainer = {
     fontWeight: "bold",
     padding: "0.5em",
     display: "flex",
-    justifyContent: "space-between"
+    flexDirection: "column",
+    alignItems: "center"
+
 
 }
 
@@ -58,7 +50,17 @@ const aboutImg = {
     width: "50%",
     height: "auto",
     objectFit: "scale-down",
-    margin: "2em 2em"
+    margin: "2em 2em",
+    // border: "2px solid green"
+}
+
+const aboutMeTitle = {
+    borderBottom: "2px solid #FFFF00",
+    paddingBottom: "0.2em",
+    paddingRight: "1em",
+    paddingLeft: "1em",
+    marginBottom: "0",
+    marginTop: "1rem"
 }
 
 
@@ -66,19 +68,24 @@ const About = () => {
     return <div style={mainStyle}>
 
         <div style={styleAboutContainer}>
-            <img style={aboutImg} src="aboutSelfImg1.jpeg" />
-            <div style={{ marginLeft: "0px", marginRight: "4em", marginTop: "2em", marginBotton: "2em", width: "50%", overflow: "hidden" }}>
+            <h1 style={aboutMeTitle}>About Me</h1>
+            <div style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "top-center",
 
-                <p style={{ fontSize: "1em" }}> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into electronic typesetting, remaining essentially unchanged.
-                Iorem Ipsum passages, and more recently with desktop publishing software like
-Aldus PageMaker including versions of Lorem Ipsum.</p>
+            }}>
+                <img style={aboutImg} src="aboutSelfImg1.jpeg" />
+                <div style={{ margin: "2em", width: "45%", padding: "1em" }}>
+
+                    <p style={{ fontSize: "1.2em", lineHeight: "1.7em", overflow: "hidden", wordSpacing: "0.5em", wrap: "wrap" }}>
+                        I am junior software developer based in Canada.
+                        I enjoy coding and solve problems.  Love traveling, skiing, skating and hiking.
+                        I interested in backend and front end. </p>
+                </div>
             </div>
         </div>
-
-
-    </div>;
+    </div >;
 }
 
 About.propTypes = propTypes;

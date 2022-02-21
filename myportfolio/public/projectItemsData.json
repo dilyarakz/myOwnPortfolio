@@ -1,0 +1,20 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "imgUrl": "netflixClone.png",
+            "title": "Netflix clone page",
+            "description": "A copy of a Netflix website with user sign-up and sign-in pages",
+            "technology": "React, CSS, HTML, JavaScript, Firebase",
+            "liveUrl": "#"
+        },
+        {
+            "id": 2,
+            "imgUrl": "pmptool.png",
+            "title": "Project Management Tool",
+            "description": "Project Management application to manage projects",
+            "technology": "React, CSS, HTML, JavaScript, Java, Spring Boot",
+            "liveUrl": "#"
+        }
+    ]
+}

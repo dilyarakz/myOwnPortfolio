@@ -21,6 +21,7 @@ function App() {
         <Route path="contacts" element={<Contacts />} />
       </Routes>
 
+
       <Footer id="footer" />
     </div>
   );

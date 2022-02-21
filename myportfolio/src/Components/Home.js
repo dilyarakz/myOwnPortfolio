@@ -23,7 +23,7 @@ const mainStyle = {
 }
 
 const welcomeText = {
-    backgroundColor: "rgb(0, 0, 0, 0.5)",
+    backgroundColor: "rgb(0, 0, 0, 0.6)",
     width: "60%",
     position: "absolute",
     top: "35%",

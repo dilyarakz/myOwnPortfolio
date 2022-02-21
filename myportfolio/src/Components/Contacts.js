@@ -1,19 +1,22 @@
 import React from 'react';
+import Carousel, { CarouselItem } from './Carousel/Carousel';
 
-// #region component
-const propTypes = {};
 
-const defaultProps = {};
 
-/**
- * 
- */
-const Contacts = () => {
-    return <div>Contacts</div>;
+function Contacts() {
+    return (
+        <div>
+            <Carousel>
+                <CarouselItem>Item 1</CarouselItem>
+                <CarouselItem>Item 2</CarouselItem>
+                <CarouselItem>Item 3</CarouselItem>
+                <CarouselItem>Item 4</CarouselItem>
+
+            </Carousel>
+        </div>
+    );
+
 }
 
-Contacts.propTypes = propTypes;
-Contacts.defaultProps = defaultProps;
-// #endregion
 
 export default Contacts;

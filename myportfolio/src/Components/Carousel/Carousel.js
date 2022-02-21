@@ -30,14 +30,23 @@ export const CarouselItem = ({ children, width }) => {
 
 
 const Carousel = ({ children }) => {
+
+    const dumArr = []
+
+    for (let i = 0; i <= Math.floor(children.length / 2); i++) {
+        console.log("Dum", Math.floor(children.length / 2))
+        dumArr.push(i);
+    }
+
+
     const [paused, setPaused] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
-            newIndex = React.Children.count(children) - 1;
+            newIndex = React.Children.count(children) / 2;
 
-        } else if (newIndex >= React.Children.count(children)) {
+        } else if (newIndex >= React.Children.count(children) / 2) {
             newIndex = 0;
         }
 
@@ -59,8 +68,8 @@ const Carousel = ({ children }) => {
     })
 
     const handlers = useSwipeable({
-        onSwipedLeft: () => updateIndex(activeIndex + 1),
-        onSwipedRight: () => updateIndex(activeIndex - 1)
+        onSwipedLeft: () => updateIndex(activeIndex + 2),
+        onSwipedRight: () => updateIndex(activeIndex - 2)
     })
 
     return (
@@ -74,19 +83,23 @@ const Carousel = ({ children }) => {
             }}>
                 {
                     React.Children.map(children, (child, index) => {
-                        return React.cloneElement(child, { width: "100%" });
+                        return React.cloneElement(child, { width: "50%" });
                     })}
             </div>
             <div className="indicators">
-                <button onClick={() => { updateIndex(activeIndex - 1) }}>
+                <button onClick={() => { updateIndex(activeIndex - 2) }}>
                     Prev
             </button>
                 {
-                    React.Children.map(children, (child, index) => {
+                    React.Children.map(dumArr, (child, index) => {
+
+                        console.log(dumArr)
+
                         return (
                             <button
                                 className={`${index === activeIndex ? "active" : ""}`}
                                 onClick={() => {
+                                    console.log("index: ", index)
                                     updateIndex(index)
                                 }}>
                                 {index + 1}
@@ -94,7 +107,7 @@ const Carousel = ({ children }) => {
                         )
                     })
                 }
-                <button onClick={() => updateIndex(activeIndex + 1)}>
+                <button onClick={() => updateIndex(activeIndex + 2)}>
                     Next
             </button>
 

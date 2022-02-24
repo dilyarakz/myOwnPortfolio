@@ -6,23 +6,22 @@ import Home from './Components/Home';
 import { Routes, Route } from "react-router-dom";
 import About from './Components/About';
 import Projects from './Components/Projects';
-import Contacts from './Components/Contacts';
+import Skills from './Components/Skills';
 
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar className="NavBar" />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="projects" element={<Projects />} />
-        <Route path="contacts" element={<Contacts />} />
       </Routes>
 
 
-      <Footer id="footer" />
+      <Footer />
     </div>
   );
 }

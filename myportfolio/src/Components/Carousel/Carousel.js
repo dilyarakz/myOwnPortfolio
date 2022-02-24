@@ -2,26 +2,34 @@ import React, { useState, useEffect } from 'react';
 import "./Carousel.css";
 import { useSwipeable } from "react-swipeable";
 
+import { TiMediaRecordOutline } from "react-icons/ti";
+import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
+
+
 
 
 
 const carousel = {
+    marginTop: "4rem",
+    paddingBottom: "2rem",
     overflow: "hidden",
-    backgroundColor: "yellow"
+    width: "100vw",
+    alignItems: "center"
 }
 
 
 
+
+
 export const CarouselItem = ({ children, width }) => {
+
     return (<div style={{
         width: width,
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "500px",
-        backgroundColor: "green",
-        color: "#fff",
-
+        height: "100%",
+        margin: "0",
     }}>
         {children}
     </div>
@@ -31,22 +39,16 @@ export const CarouselItem = ({ children, width }) => {
 
 const Carousel = ({ children }) => {
 
-    const dumArr = []
 
-    for (let i = 0; i <= Math.floor(children.length / 2); i++) {
-        console.log("Dum", Math.floor(children.length / 2))
-        dumArr.push(i);
-    }
-
-
+    // let dumArr = new Array(Math.ceil(children.length / 2))
     const [paused, setPaused] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {
-            newIndex = React.Children.count(children) / 2;
+            newIndex = React.Children.count(children) - 1;
 
-        } else if (newIndex >= React.Children.count(children) / 2) {
+        } else if (newIndex >= React.Children.count(children)) {
             newIndex = 0;
         }
 
@@ -58,7 +60,7 @@ const Carousel = ({ children }) => {
             if (!paused) {
                 updateIndex(activeIndex + 1);
             }
-        }, 3000);
+        }, 4000);
 
         return () => {
             if (interval) {
@@ -68,8 +70,8 @@ const Carousel = ({ children }) => {
     })
 
     const handlers = useSwipeable({
-        onSwipedLeft: () => updateIndex(activeIndex + 2),
-        onSwipedRight: () => updateIndex(activeIndex - 2)
+        onSwipedLeft: () => updateIndex(activeIndex + 1),
+        onSwipedRight: () => updateIndex(activeIndex - 1)
     })
 
     return (
@@ -83,33 +85,25 @@ const Carousel = ({ children }) => {
             }}>
                 {
                     React.Children.map(children, (child, index) => {
-                        return React.cloneElement(child, { width: "50%" });
+                        return React.cloneElement(child, { width: "100%" });
                     })}
             </div>
             <div className="indicators">
-                <button onClick={() => { updateIndex(activeIndex - 2) }}>
-                    Prev
-            </button>
+                <button className="arrorLeft" onClick={() => {
+                    return updateIndex(activeIndex - 1)
+                }}>
+                    <BsChevronDoubleLeft />
+                </button>
                 {
-                    React.Children.map(dumArr, (child, index) => {
-
-                        console.log(dumArr)
-
+                    React.Children.map(children, (child, index) => {
                         return (
-                            <button
-                                className={`${index === activeIndex ? "active" : ""}`}
-                                onClick={() => {
-                                    console.log("index: ", index)
-                                    updateIndex(index)
-                                }}>
-                                {index + 1}
-                            </button>
+                            <button className={`${index === activeIndex ? "active" : "notActive"}`}></button>
                         )
                     })
                 }
-                <button onClick={() => updateIndex(activeIndex + 2)}>
-                    Next
-            </button>
+                <button className="arrorRight" onClick={() => updateIndex(activeIndex + 1)}>
+                    <BsChevronDoubleRight />
+                </button>
 
             </div>
         </div>

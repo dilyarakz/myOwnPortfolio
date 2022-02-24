@@ -1,64 +1,235 @@
+body{
+  position: relative;
+  min-height: 100vh;
+}
+
 .App {
   font-family: 'Gideon Roman', cursive;
-  height: 100vh;
-  font-size: 16px;
-  display: grid;
-  grid-template-rows: 10% 80% 10%;
+  font-size: 12px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
 }
 
+/*NAV BAR styling*/
 
-
-
-
-#link {
-      text-decoration: none; 
-      color: #979494;
+.navBarMainContainer{
+  background-color: black;
+  color: #979494;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-#link:hover{
-  font-size: 2.5rem;
-  color: #02FFFF;
+.navBarNavigation{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5em;
+}
+
+.navBarLinkItem{
+  margin-right: 1rem;
+  padding: 0.5rem 0.2rem;
+}
+
+.navBarLogoContainer{
+  font-style: italic;
   font-weight: 900;
-  margin: 0.3rem;
+  color:#02FFFF;
+   margin-right: 1rem;
+  padding: 0.5rem 0.2rem;
 }
 
-#link:active{
-  text-decoration: underline;
+
+.navBarLinkItem{
+  text-decoration: none;
+  color: #979494;
+  font-weight: bold;
 }
 
-#link:visited{
-  text-decoration: underline;
-} 
-
-
-a{
-  color: white
+.navBarLinkItem:hover, .navBarLinkItem:focus{
+  color: #02FFFF;
 }
 
-.arrorButton, .arrorButtonLink {
- height: "100%";
-    width: "10%";
-    padding: "2em 0.4em";
-    background-color: "rgb(0, 0, 0, 0.1)";
-    color: "rgb(255, 255, 255)";
-    border: "none"
+.navBarLinkItem:hover{
+  background: #979494;
 }
-.arrorButton:hover, .arrorButtonLink:hover {
-  background-color: rgb(255, 255,2, 0.7);
+
+
+/**FOOTER*/
+
+.footerMainContainer{
+  width: 100%;
+  height: 20%;
+  background: black;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #02FFFF;
+  padding: 2rem;
+}
+
+.footerMainContainer> h3{
+  font-size: 1rem;
+
+  margin: 1rem;
+}
+
+.footerLinks{
+  color:  #02FFFF;
+  margin-right: 1rem;
+}
+
+.linksToOtherProf{
+  display: flex;
+  justify-content: space-around;
+}
+
+/*COMMON Attributes*/
+
+.homeSceenMainContainer,
+.aboutMainContainer,
+.projectsMainContainer{
+  background-image: url("images/homebackground3.jpeg");
+  background-size: cover;
+  background-position: top;
   
 }
 
-#projectLink:hover{
-  background-color: rgb(255, 255,2, 0.7);
-  opacity: .75;
+
+/*HOME Screen*/
+
+.homeSceenMainContainer{
+  
+  margin-top: 0;
+  height: 100vh;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#projectImg:hover, #projectTextContainer:hover{
-  background-color: rgb(255, 255,2, 0.7);
+.homeTextContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#projectImg:hover{
-   background-color: rgb(255, 255,2, 0.7);
-  opacity: 0.70;
-    transform: scale(1.1);
+.homeTextContainer > h1{
+  background-color: rgb(0, 0, 0, 0.6);
+  color: yellow;
+  width: 90%;
+  height: auto;
+  /* display: flex; */
+  padding: 1.5rem;
+  font-size: 2em;
+  line-height: 2.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.homeSceenName{
+  text-decoration: underline;
+}
+
+
+/*ABOUT*/
+
+.aboutMainContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0rem;
+  height: 100vh;
+}
+
+.aboutMainContainerModuleImg{
+  width: 300px;
+}
+
+.aboutMainContainerModule{
+  width: 90%;
+  color: yellow;
+  background-color: rgba(190, 18, 18, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutMainContainerModuleTitle{
+  font-weight: bold;
+  padding: 0.6rem;
+  width: 100%;
+  text-align: center;
+}
+
+.aboutMainContainerModuleText{
+  padding: 1rem;
+  width: 100%;
+}
+
+/*Projects*/
+
+.projectsMainContainer{
+  height: 100%;
+}
+
+.projectsMainContainerArea{
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.projectItems{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectCard{
+  width: 60%;
+  background-color: red;
+  color: white;
+  margin-top: 2rem;
+}
+
+.projectCardImg{
+  width: 100%;
+}
+
+.projectCardText{
+  padding: 1rem 1rem 0rem 1rem;
+  margin-bottom: 0;
+}
+
+.projectCardTitle{
+  font-weight: bold;
+}
+
+.projectBtnsContainer{
+  padding: 0rem 2rem 1rem 0.5rem;
+  display: flex;
+  justify-content: right;
+}
+
+.btn{
+  background-color: white;
+  font-size: 0.7rem;
+  margin-left: 1rem;
+  letter-spacing: 1px;
+  border-radius: 0;
+  font-weight: bold;
+}
+
+.btn:hover{
+  background-color: #02FFFF;
+  color: red;
 }

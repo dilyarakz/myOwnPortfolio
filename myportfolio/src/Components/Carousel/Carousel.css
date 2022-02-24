@@ -3,12 +3,12 @@
   
 }
 
-.inner{
+/* .inner{
     white-space: nowrap;
     transition: transform 0.3s;
     
-}
-
+} */
+/* 
 .carousel-item{
 
     white-space: nowrap;
@@ -20,7 +20,7 @@
     color: #fff;
 
 
-}
+} */
 
 .indicators{
     display: flex;
@@ -31,7 +31,39 @@
     margin: 5px;
 }
 
-.indicators > button.active{
-    background-color: green;
-    color: #fff;
+.arrorLeft:hover, .arrorRight:hover{
+    background: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+    opacity: 0.5;
+    color: #02FFFF;
 }
+
+.arrorLeft, .arrorRight{
+    position: absolute;
+    top: 18%;
+    background: none;
+    width: 10%;
+    bottom: 18%;
+    border: none;    
+}
+
+
+.arrorLeft{
+    left: 5%;   
+}
+
+.arrorRight{
+    right: 5%;
+}
+
+.indicators > button.active, .indicators > button.notActive{
+    margin-top: 2rem;
+}
+
+.indicators > button.active{
+    background-color: #02FFFF;
+ 
+} 
+
+.indicators > button.notActive{
+    background-color: none;
+} 

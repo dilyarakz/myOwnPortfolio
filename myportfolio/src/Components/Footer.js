@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { GoMarkGithub, AiOutlineLinkedin } from "react-icons/go";
+import { FaLinkedin } from "react-icons/fa";
 
 /**
  * 
@@ -9,13 +10,14 @@ const footerMain = {
     backgroundColor: "black",
     padding: "3em",
     color: "#02FFFF",
-    // position: "absolute",
+    position: "relative",
     width: "100%",
     bottom: "0",
     display: "flex",
     justifyContent: "center",
     fontFamily: "sans-serif",
-    fontStyle: "normal"
+    fontStyle: "normal",
+    // marginTop: "auto"
 }
 
 const linkInStyle = {
@@ -29,17 +31,16 @@ const linkInStyle = {
 }
 
 const Footer = () => {
-    return <footer style={footerMain}>
-        {
+    return (
+        <footer className="footerMainContainer">
+            <h3>dilyara.gumarova@gmail.com</h3>
+            <div className="linksToOtherProf">
+                <a href="#" className="footerLinks"><GoMarkGithub className="githubLogo" /></a>
+                <a href="#" className="footerLinks"><FaLinkedin /></a>
+            </div>
 
-            // <a><i style={linkInStyle}>git</i></a>
-            // <a><i className="material-icons" style={{ fontSize: '36px' }}>share</i></a>
-            // <a><i style={linkInStyle}>in</i></a>
-        }
-
-        Footer
-
-    </footer>;
+        </footer>
+    )
 }
 
 
